@@ -3,15 +3,15 @@
     <form name="userForm" ng-submit="updateUserProfile(userForm.$valid)" class="signin" novalidate autocomplete="off">
       <fieldset>
         <div class="form-group" show-errors>
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" class="form-control" ng-model="user.firstName" placeholder="First Name" required>
+          <label for="firstName">Vorname</label>
+          <input type="text" id="firstName" name="firstName" class="form-control" ng-model="user.firstName" placeholder="Vorname" required>
           <div ng-messages="userForm.firstName.$error" role="alert">
             <p class="help-block error-text" ng-message="required">First name is required.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" class="form-control" ng-model="user.lastName" placeholder="Last Name" required>
+          <label for="lastName">Nachname</label>
+          <input type="text" id="lastName" name="lastName" class="form-control" ng-model="user.lastName" placeholder="Nachname" required>
           <div ng-messages="userForm.lastName.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Last name is required.</p>
           </div>
@@ -32,10 +32,10 @@
           </div>
         </div>
         <div class="text-center form-group">
-          <button type="submit" class="btn btn-primary">Save Profile</button>
+          <button type="submit" class="btn btn-primary">Profil speichern</button>
         </div>
         <div ng-show="success" class="text-center text-success">
-          <strong>Profile Saved Successfully</strong>
+          <strong>Profil wurde erfolgreich gespeichert</strong>
         </div>
         <div ng-show="error" class="text-center text-danger">
           <strong ng-bind="error"></strong>
