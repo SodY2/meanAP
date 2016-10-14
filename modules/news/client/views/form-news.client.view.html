@@ -1,0 +1,24 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.news._id ? 'News bearbeiten' : 'News erstellen'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.newsForm" class="form-horizontal" ng-submit="vm.save(vm.form.newsForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Titel</label>
+          <input name="name" type="text" ng-model="vm.news.name" id="name" class="form-control" placeholder="Titel" required>
+          <div ng-messages="vm.form.newsForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">News title is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.news._id ? 'Update' : 'Erstellen'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

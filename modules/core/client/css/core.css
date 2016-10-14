@@ -1,37 +1,35 @@
-.content {
-  margin-top: 50px;
+body {
+  position: relative;
+  background-image: url("../img/01MainBackground.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-top: 70px;
 }
-.undecorated-link:hover {
-  text-decoration: none;
+body .nav li a img {
+  width: 20px;
 }
-[ng\:cloak],
-[ng-cloak],
-[x-ng-cloak],
-.ng-cloak,
-.x-ng-cloak {
-  display: none !important;
+body .page-header {
+  border-bottom: 1px solid #b41336;
 }
-.header-profile-image {
-  opacity: 0.8;
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  margin-right: 5px;
+body .page-header h1 {
+  color: #b41336;
 }
-.open .header-profile-image,
-a:hover .header-profile-image {
-  opacity: 1;
+body .form-group label {
+  color: #9E9E9E;
 }
-.user-header-dropdown-toggle {
-  padding-top: 11px !important;
-  padding-bottom: 11px !important;
+body .error-text {
+  color: #b41336;
 }
-.error-text {
-  display: none;
+body .chat-message {
+  background-color: white;
 }
-.has-error .help-block.error-text {
-  display: block;
+body .chat-message .chat-profile-image {
+  margin-top: 5px;
 }
-.has-error .help-inline.error-text {
-  display: inline;
+body .chat-message .chat-message-details {
+  padding-bottom: 5px;
 }
