@@ -2,28 +2,26 @@
 
 (function() {
   describe('authInterceptor', function() {
-    // Initialize global variables
+    //Initialize global variables
     var authInterceptor,
       $q,
       $state,
-      Authentication,
       httpProvider;
 
     // Load the main application module
     beforeEach(module(ApplicationConfiguration.applicationModuleName));
 
-    // Load httpProvider
+    //Load httpProvider
     beforeEach(module(function($httpProvider) {
       httpProvider = $httpProvider;
     }));
 
-    beforeEach(inject(function(_authInterceptor_, _$q_, _$state_, _Authentication_) {
+    beforeEach(inject(function(_authInterceptor_, _$q_, _$state_) {
       authInterceptor = _authInterceptor_;
       $q = _$q_;
       $state = _$state_;
-      Authentication = _Authentication_;
-      spyOn($q, 'reject');
-      spyOn($state, 'transitionTo');
+      spyOn($q,'reject');
+      spyOn($state,'transitionTo');
     }));
 
     it('Auth Interceptor should be object', function() {
@@ -58,26 +56,8 @@
         };
         var promise = authInterceptor.responseError(response);
         expect($q.reject).toHaveBeenCalled();
-        expect(Authentication.user).toBe(null);
         expect($state.transitionTo).toHaveBeenCalledWith('authentication.signin');
       });
     });
-
-    describe('Unresponsive Interceptor', function() {
-      var Notification;
-      beforeEach(inject(function(_Notification_) {
-        Notification = _Notification_;
-        spyOn(Notification, 'error');
-      }));
-      it('should show error Notification', function () {
-        var response = {
-          status: -1,
-          config: {}
-        };
-        var promise = authInterceptor.responseError(response);
-        expect($q.reject).toHaveBeenCalled();
-        expect(Notification.error).toHaveBeenCalledWith({ message: 'No response received from server. Please try again later.', title: 'Error processing request!', delay: 5000 });
-      });
-    });
   });
-}());
+})();

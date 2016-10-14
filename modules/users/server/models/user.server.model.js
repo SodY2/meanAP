@@ -1,19 +1,14 @@
 'use strict';
 
 /**
- * Module dependencies
+ * Module dependencies.
  */
 var mongoose = require('mongoose'),
-  path = require('path'),
-  config = require(path.resolve('./config/config')),
   Schema = mongoose.Schema,
   crypto = require('crypto'),
   validator = require('validator'),
   generatePassword = require('generate-password'),
   owasp = require('owasp-password-strength-test');
-
-owasp.config(config.shared.owasp);
-
 
 /**
  * A Validation function for local strategy properties
@@ -26,7 +21,7 @@ var validateLocalStrategyProperty = function (property) {
  * A Validation function for local strategy email
  */
 var validateLocalStrategyEmail = function (email) {
-  return ((this.provider !== 'local' && !this.updated) || validator.isEmail(email, { require_tld: false }));
+  return ((this.provider !== 'local' && !this.updated) || validator.isEmail(email));
 };
 
 /**
@@ -51,10 +46,7 @@ var UserSchema = new Schema({
   },
   email: {
     type: String,
-    index: {
-      unique: true,
-      sparse: true // For this to work on a previously indexed field, the index must be dropped & the application restarted.
-    },
+    unique: true,
     lowercase: true,
     trim: true,
     default: '',
@@ -140,7 +132,7 @@ UserSchema.pre('validate', function (next) {
  */
 UserSchema.methods.hashPassword = function (password) {
   if (this.salt && password) {
-    return crypto.pbkdf2Sync(password, new Buffer(this.salt, 'base64'), 10000, 64, 'SHA1').toString('base64');
+    return crypto.pbkdf2Sync(password, new Buffer(this.salt, 'base64'), 10000, 64).toString('base64');
   } else {
     return password;
   }
@@ -176,7 +168,7 @@ UserSchema.statics.findUniqueUsername = function (username, suffix, callback) {
 };
 
 /**
-* Generates a random passphrase that passes the owasp test
+* Generates a random passphrase that passes the owasp test.
 * Returns a promise that resolves with the generated passphrase, or rejects with an error if something goes wrong.
 * NOTE: Passphrases are only tested against the required owasp strength tests, and not the optional tests.
 */
@@ -185,8 +177,8 @@ UserSchema.statics.generateRandomPassphrase = function () {
     var password = '';
     var repeatingCharacters = new RegExp('(.)\\1{2,}', 'g');
 
-    // iterate until the we have a valid passphrase
-    // NOTE: Should rarely iterate more than once, but we need this to ensure no repeating characters are present
+    // iterate until the we have a valid passphrase. 
+    // NOTE: Should rarely iterate more than once, but we need this to ensure no repeating characters are present.
     while (password.length < 20 || repeatingCharacters.test(password)) {
       // build the random password
       password = generatePassword.generate({
@@ -194,10 +186,10 @@ UserSchema.statics.generateRandomPassphrase = function () {
         numbers: true,
         symbols: false,
         uppercase: true,
-        excludeSimilarCharacters: true
+        excludeSimilarCharacters: true,
       });
 
-      // check if we need to remove any repeating characters
+      // check if we need to remove any repeating characters.
       password = password.replace(repeatingCharacters, '');
     }
 

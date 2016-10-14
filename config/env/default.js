@@ -8,10 +8,7 @@ module.exports = {
     googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
   },
   port: process.env.PORT || 3000,
-  host: process.env.HOST || '0.0.0.0',
-  // DOMAIN config should be set to the fully qualified application accessible
-  // URL. For example: https://www.myapp.com (including port if required).
-  domain: process.env.DOMAIN,
+  templateEngine: 'swig',
   // Session Cookie settings
   sessionCookie: {
     // session expiration is set by default to 24 hours
@@ -26,35 +23,18 @@ module.exports = {
   },
   // sessionSecret should be changed for security measures and concerns
   sessionSecret: process.env.SESSION_SECRET || 'MEAN',
-  // sessionKey is the cookie session name
+  // sessionKey is set to the generic sessionId key used by PHP applications
+  // for obsecurity reasons
   sessionKey: 'sessionId',
   sessionCollection: 'sessions',
-  // Lusca config
-  csrf: {
-    csrf: false,
-    csp: false,
-    xframe: 'SAMEORIGIN',
-    p3p: 'ABCDEF',
-    xssProtection: true
-  },
   logo: 'modules/core/client/img/brand/logo.png',
   favicon: 'modules/core/client/img/brand/favicon.ico',
   uploads: {
     profileUpload: {
       dest: './modules/users/client/img/profile/uploads/', // Profile upload destination path
       limits: {
-        fileSize: 1 * 1024 * 1024 // Max file size in bytes (1 MB)
+        fileSize: 1*1024*1024 // Max file size in bytes (1 MB)
       }
     }
-  },
-  shared: {
-    owasp: {
-      allowPassphrases: true,
-      maxLength: 128,
-      minLength: 10,
-      minPhraseLength: 20,
-      minOptionalTestsToPass: 4
-    }
   }
-
 };
