@@ -34,12 +34,6 @@ var UserSchema = new Schema({
         default: '',
         validate: [validateLocalStrategyProperty, 'Please fill in your first name']
     },
-    lastName: {
-        type: String,
-        trim: true,
-        default: '',
-        validate: [validateLocalStrategyProperty, 'Please fill in your last name']
-    },
     displayName: {
         type: String,
         trim: true
@@ -56,7 +50,6 @@ var UserSchema = new Schema({
         type: String,
         unique: 'Username already exists',
         required: 'Please fill in a username',
-        lowercase: true,
         trim: true
     },
     password: {
@@ -83,6 +76,19 @@ var UserSchema = new Schema({
         }],
         default: ['user'],
         required: 'Please provide at least one role'
+    },
+    clanrang: {
+        type: [{
+            type: String,
+            enum: ['Praktikant', 'Laufbursche | Vorl. Mitglied', 'Dealer | Vollmitglied', 'Hintermann', "Spitzel", "Altes Eisen", "Rechte Hand", "Vorstand"]
+        }],
+        default: ['Praktikant'],
+        required: 'Bitte Rang angeben'
+    },
+    steamprofile: {
+        type: String,
+        unique: 'Steamprofile already exists',
+        required: 'Please fill in your steam profile'
     },
     updated: {
         type: Date
@@ -150,7 +156,7 @@ UserSchema.methods.authenticate = function(password) {
  */
 UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
     var _this = this;
-    var possibleUsername = username.toLowerCase() + (suffix || '');
+    var possibleUsername = username + (suffix || '');
 
     _this.findOne({
         username: possibleUsername

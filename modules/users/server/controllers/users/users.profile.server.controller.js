@@ -26,7 +26,7 @@ exports.update = function (req, res) {
     // Merge existing user
     user = _.extend(user, req.body);
     user.updated = Date.now();
-    user.displayName = user.firstName + ' ' + user.lastName;
+    user.displayName = user.firstName;
 
     user.save(function (err) {
       if (err) {
@@ -58,7 +58,7 @@ exports.changeProfilePicture = function (req, res) {
   var message = null;
   var upload = multer(config.uploads.profileUpload).single('newProfilePicture');
   var profileUploadFileFilter = require(path.resolve('./config/lib/multer')).profileUploadFileFilter;
-  
+
   // Filtering to upload only images
   upload.fileFilter = profileUploadFileFilter;
 
