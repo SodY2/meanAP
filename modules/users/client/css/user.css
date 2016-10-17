@@ -1,0 +1,20 @@
+.user-detail .content {
+  background-color: white;
+  margin-left: 15px;
+}
+.user-detail .content .row:first-child {
+  margin-top: 20px;
+}
+.user-detail .content .row:last-child {
+  margin-bottom: 20px;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #b41336;
+  border-color: #b41336;
+}
