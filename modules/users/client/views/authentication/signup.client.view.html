@@ -32,6 +32,18 @@
           </div>
         </div>
         <div class="form-group" show-errors>
+          <label for="birthDate">Geburtstag</label>
+          <p class="input-group">
+            <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="credentials.birthDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" name="birthDate" show-button-bar="false"/>
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+            <div ng-messages="userForm.birthDate.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Geburtstag wird benötigt.</p>
+            </div>
+          </p>
+        </div>
+        <div class="form-group" show-errors>
           <label for="password">Passwort</label>
             <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Passwort" popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
           <div ng-messages="userForm.password.$error" role="alert">

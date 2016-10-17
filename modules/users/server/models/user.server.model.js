@@ -90,6 +90,11 @@ var UserSchema = new Schema({
         unique: 'Steamprofile already exists',
         required: 'Please fill in your steam profile'
     },
+    birthDate: {
+        type: Date,
+        default: Date.now,
+        required: 'Bitte Rang angeben'
+    },
     updated: {
         type: Date
     },
