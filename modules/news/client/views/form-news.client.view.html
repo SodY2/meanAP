@@ -9,8 +9,10 @@
           <label class="control-label" for="name">Titel</label>
           <input name="name" type="text" ng-model="vm.news.name" id="name" class="form-control" placeholder="Titel" required>
           <div ng-messages="vm.form.newsForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">News title is required.</p>
+            <p class="help-block error-text" ng-message="required">Newstitel wird benötigt.</p>
           </div>
+        </div>
+        <div class="form-group">
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.news._id ? 'Update' : 'Erstellen'}}</button>

@@ -1,4 +1,4 @@
-<section>
+<section class="news-list">
   <div class="page-header">
     <h1>News</h1>
   </div>
@@ -8,7 +8,7 @@
        class="list-group-item">
       <small class="list-group-item-text">
         Erstellt am
-        <span ng-bind="news.created | date:'mediumDate'"></span>
+        <span ng-bind="news.created | date:'dd.MM.yyyy'"></span>
         von
         <span ng-if="news.user" ng-bind="news.user.displayName"></span>
         <span ng-if="!news.user">Deleted User</span>

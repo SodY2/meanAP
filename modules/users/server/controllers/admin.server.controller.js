@@ -23,7 +23,7 @@ exports.update = function(req, res) {
 
     //For security purposes only merge these parameters
     user.firstName = req.body.firstName;
-    user.displayName = user.firstName;
+    user.displayName = user.firstName + " | " + user.username;
     user.roles = req.body.roles;
     user.clanrang = req.body.clanrang;
 

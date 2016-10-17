@@ -1,6 +1,7 @@
 .user-detail .content {
   background-color: white;
   margin-left: 15px;
+  border-radius: 5px;
 }
 .user-detail .content .row:first-child {
   margin-top: 20px;
