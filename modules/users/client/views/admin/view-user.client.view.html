@@ -1,4 +1,4 @@
-<section>
+<section class="user-detail">
   <div class="page-header">
     <div class="row">
       <div class="col-md-6">
@@ -16,7 +16,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 content">
       <div class="row">
         <div class="col-md-3"><strong>Vorname</strong></div>
         <div class="col-md-6" ng-bind="user.firstName"></div>
@@ -28,18 +28,33 @@
       </div>
       <hr/>
       <div class="row">
-        <div class="col-md-3"><strong>Erstelldatum</strong></div>
-        <div class="col-md-6" ng-bind="user.created"></div>
+        <div class="col-md-3"><strong>Alter</strong></div>
+        <div class="col-md-6">{{calculateAge(user.birthDate)}}</div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Geburtstag</strong></div>
+        <div class="col-md-6">{{ user.birthDate | date : 'dd.MM.yyyy'}}</div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Anmeldedatum</strong></div>
+        <div class="col-md-6">{{ user.created | date : 'dd.MM.yyyy @ HH:mm'}}</div>
       </div>
       <hr/>
       <div class="row">
         <div class="col-md-3"><strong>Steamprofil-Link</strong></div>
-        <div class="col-md-6" ng-bind="user.steamprofile"></div>
+        <div class="col-md-6"><a ng-bind="user.steamprofile" href="{{user.steamprofile}}" target="_blank"></a></div>
       </div>
       <hr/>
       <div class="row">
         <div class="col-md-3"><strong>Rolle</strong></div>
         <div class="col-md-6" ng-bind="user.roles"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Clanrang</strong></div>
+        <div class="col-md-6" ng-bind="user.clanrang"></div>
       </div>
     </div>
   </div>
