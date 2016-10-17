@@ -33,3 +33,6 @@ body .chat-message .chat-profile-image {
 body .chat-message .chat-message-details {
   padding-bottom: 5px;
 }
+body .user-header-dropdown-toggle .divider {
+  color: #b41336;
+}

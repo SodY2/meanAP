@@ -33,7 +33,7 @@
       <li class="dropdown" dropdown>
         <a class="dropdown-toggle user-header-dropdown-toggle" dropdown-toggle role="button">
           <img ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="header-profile-image" />
-          <span ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
+          <span>{{authentication.user.firstName}} <span class="divider">|</span> {{authentication.user.username}}</span> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu" role="menu">
           <li ui-sref-active="active">
@@ -43,7 +43,7 @@
             <a ui-sref="settings.picture">Profilbild ändern</a>
           </li>
           <li ui-sref-active="active" ng-show="authentication.user.provider === 'local'">
-            <a ui-sref="settings.password">Password ändern</a>
+            <a ui-sref="settings.password">Passwort ändern</a>
           </li>
           <li class="divider"></li>
           <li>
