@@ -12,10 +12,28 @@ body {
 body .nav li a img {
   width: 20px;
 }
+body a {
+  color: #b41336;
+  border: 1px solid transparent;
+}
+body .btn-primary {
+  background-color: transparent;
+  color: #b41336;
+  border-color: #b41336;
+  background-image: none;
+}
+body .btn-primary:hover,
+body .btn-primary:focus {
+  background-color: #b41336;
+  background-image: linear-gradient(to bottom, #b41336 0%, #b41336 100%);
+  border-color: #b41336;
+}
 body .page-header {
+  padding-bottom: inherit;
   border-bottom: 1px solid #b41336;
 }
 body .page-header h1 {
+  font-size: 24px;
   color: #b41336;
 }
 body .form-group label {
@@ -35,4 +53,16 @@ body .chat-message .chat-message-details {
 }
 body .user-header-dropdown-toggle .divider {
   color: #b41336;
+}
+body .nav-pills > li.active > a,
+body .nav-pills > li.active > a:hover,
+body .nav-pills > li.active > a:focus {
+  background-color: #b41336;
+  border: 1px solid #b41336;
+}
+body .nav > li > a:hover,
+body .nav > li > a:focus {
+  border: 1px solid #b41336;
+  color: #b41336;
+  background-color: transparent;
 }

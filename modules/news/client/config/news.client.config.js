@@ -1,5 +1,5 @@
-'use strict';
-
+// 'use strict';
+//
 // angular.module('news').run(['Menus',
 //     function(Menus) {
 //         // Set top bar menu items

@@ -1,0 +1,60 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.nap._id ? 'Eintrag bearbeiten' : 'Neuer Diplomatieeintrag'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.napForm" class="form-horizontal" ng-submit="vm.save(vm.form.napForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="typ">NAP/ASSI</label>
+          <div class="controls">
+            <ui-select ng-model="vm.nap.typ" name="typ">
+              <ui-select-match placeholder="Clanrang auswählen...">{{vm.nap.typ}}</ui-select-match>
+              <ui-select-choices repeat="typ in choices track by $index">
+                <span ng-bind="typ"></span>
+              </ui-select-choices>
+            </ui-select>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Clantag</label>
+          <input name="clantag" type="text" ng-model="vm.nap.clantag" id="clantag" class="form-control" placeholder="Clantag">
+          <div ng-messages="vm.form.napForm.clantag.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Clantag wird benötigt.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Clanname</label>
+          <input name="clanname" type="text" ng-model="vm.nap.clanname" id="clanname" class="form-control" placeholder="Clanname" required>
+          <div ng-messages="vm.form.napForm.clanname.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Clanname wird benötigt.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Leader</label>
+          <input name="leader" type="text" ng-model="vm.nap.leader" id="leader" class="form-control" placeholder="Leader" required>
+          <div ng-messages="vm.form.napForm.leader.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Leader wird benötigt.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Teamspeak-IP</label>
+          <input name="ts" type="text" ng-model="vm.nap.ts" id="ts" class="form-control" placeholder="Teamspeak-IP">
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Begründung</label>
+          <input name="reason" type="text" ng-model="vm.nap.reason" id="reason" class="form-control" placeholder="Begründung" required>
+          <div ng-messages="vm.form.napForm.reason.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Begründung wird benötigt.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.nap._id ? 'Speichern' : 'Erstellen'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

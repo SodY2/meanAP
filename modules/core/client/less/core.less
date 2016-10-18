@@ -22,9 +22,27 @@ body {
           }
         }
       }
+    a {
+      color: @mainColor;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary{
+      background-color: transparent;
+      color: @mainColor;
+      border-color: @mainColor;
+      background-image: none;
+      &:hover, &:focus {
+        background-color: @mainColor;
+        background-image:linear-gradient(to bottom, @mainColor 0%, @mainColor 100%);
+        border-color: @mainColor;
+      }
+    }
     .page-header{
+      padding-bottom: inherit;
       border-bottom: 1px solid @mainColor;
       h1{
+        font-size: 24px;
         color: @mainColor;
       }
     }
@@ -53,6 +71,16 @@ body {
       .divider {
         color: @mainColor;
       }
+    }
+
+    .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+      background-color: @mainColor;
+      border: 1px solid @mainColor;
+    }
+    .nav > li > a:hover, .nav > li > a:focus {
+      border: 1px solid @mainColor;
+      color: @mainColor;
+      background-color: transparent;
     }
   }
 //     .row {

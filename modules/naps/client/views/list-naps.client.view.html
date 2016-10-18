@@ -1,0 +1,28 @@
+<div class="list-group">
+    <ul>
+    <li ng-repeat="nap in vm.naps"
+       class="list-group-item">
+      <h4>{{nap.clantag}}<span ng-if="nap.clanname"> - </span>{{nap.clanname}}<span ng-if="nap.leader"> - </span>{{nap.leader}}<span ng-if="nap.ts"> (</span>{{nap.ts}}<span ng-if="nap.ts">)</span></h4>
+      <div class="pull-right"
+           ng-show="vm.canEdit">
+        <a class="btn btn-primary"
+           ui-sref="naps.edit({ napId: nap._id })">
+          <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn btn-primary" ng-click="vm.remove(nap)">
+          <i class="glyphicon glyphicon-trash"></i>
+        </a>
+      </div>
+
+      <small ng-if="nap.reason">{{nap.reason}}</small>
+      <br ng-if="nap.reason">
+      <small class="list-group-item-text">
+        Erstellt am
+        <span ng-bind="nap.created | date:'dd.MM.yyyy'"></span>
+        von
+        <span ng-if="nap.user" ng-bind="nap.user.displayName"></span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="news.name"></h4>
+    </li>
+  </ul>
+</div>
