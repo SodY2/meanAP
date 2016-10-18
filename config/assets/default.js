@@ -6,7 +6,9 @@ module.exports = {
             css: [
                 'public/lib/bootstrap/dist/css/bootstrap.css',
                 'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-                'public/lib/angular-ui-select/dist/select.css'
+                'public/lib/angular-ui-select/dist/select.css',
+                'public/lib/textAngular/dist/textAngular.css',
+                'public/lib/components-font-awesome/css/font-awesome.css'
             ],
             js: [
                 'public/lib/angular/angular.js',
@@ -21,7 +23,10 @@ module.exports = {
                 'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
                 'public/lib/angular-sanitize/angular-sanitize.js',
                 'public/lib/angular-ui-select/dist/select.js',
-                'public/lib/angular-redactor/angular-redactor-9.x.js'
+                'public/lib/textAngular/dist/textAngular-rangy.min.js',
+                'public/lib/textAngular/dist/textAngular-sanitize.min.js',
+                'public/lib/textAngular/dist/textAngularSetup.js',
+                'public/lib/textAngular/dist/textAngular.js',
             ],
             tests: ['public/lib/angular-mocks/angular-mocks.js']
         },
