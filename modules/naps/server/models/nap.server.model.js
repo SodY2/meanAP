@@ -20,7 +20,6 @@ var NapSchema = new Schema({
         default: ''
     },
     typ: {
-        type: String,
         type: [{
             type: String,
             enum: ['NAP', 'Assi']
