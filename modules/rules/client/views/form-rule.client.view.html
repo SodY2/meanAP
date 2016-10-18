@@ -1,0 +1,23 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.rule._id ? 'Regeln bearbeiten' : 'Neue Regel'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.ruleForm" class="form-horizontal" ng-submit="vm.save(vm.form.ruleForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <text-angular ng-model="vm.rule.rule"></text-angular>
+          <div ng-messages="vm.form.ruleForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Regel wird benötigt.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.rule._id ? 'Speichern' : 'Erstellen'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

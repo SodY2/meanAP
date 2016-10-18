@@ -1,0 +1,23 @@
+<section>
+  <div class="page-header">
+    <h1>Regeln</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="rule in vm.rules"
+       ui-sref="rules.view({ ruleId: rule._id })"
+       class="list-group-item">
+       <div ta-bind ng-model="rule.rule"></div>
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="rule.created | date:'dd.MM.yyyy'"></span>
+        by
+        <span ng-if="rule.user" ng-bind="rule.user.displayName"></span>
+        <span ng-if="!rule.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="rule.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.rules.$resolved && !vm.rules.length">
+    No Rules yet, why don't you <a ui-sref="rules.create">create one</a>?
+  </div>
+</section>

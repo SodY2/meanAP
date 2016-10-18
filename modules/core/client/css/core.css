@@ -66,3 +66,29 @@ body .nav > li > a:focus {
   color: #b41336;
   background-color: transparent;
 }
+body .ta-toolbar .btn-default.disabled,
+body .ta-toolbar .btn-default[disabled],
+body .ta-toolbar fieldset[disabled] .btn-default,
+body .ta-toolbar .btn-default.disabled:hover,
+body .ta-toolbar .btn-default[disabled]:hover,
+body .ta-toolbar fieldset[disabled] .btn-default:hover,
+body .ta-toolbar .btn-default.disabled:focus,
+body .ta-toolbar .btn-default[disabled]:focus,
+body .ta-toolbar fieldset[disabled] .btn-default:focus,
+body .ta-toolbar .btn-default.disabled.focus,
+body .ta-toolbar .btn-default[disabled].focus,
+body .ta-toolbar fieldset[disabled] .btn-default.focus,
+body .ta-toolbar .btn-default.disabled:active,
+body .ta-toolbar .btn-default[disabled]:active,
+body .ta-toolbar fieldset[disabled] .btn-default:active,
+body .ta-toolbar .btn-default.disabled.active,
+body .ta-toolbar .btn-default[disabled].active,
+body .ta-toolbar fieldset[disabled] .btn-default.active {
+  background-color: white;
+  opacity: 1;
+}
+body .list-preview {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+}
