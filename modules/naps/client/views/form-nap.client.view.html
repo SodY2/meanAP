@@ -9,7 +9,7 @@
           <label class="control-label" for="typ">NAP/ASSI</label>
           <div class="controls">
             <ui-select ng-model="vm.nap.typ" name="typ">
-              <ui-select-match placeholder="Clanrang auswählen...">{{vm.nap.typ}}</ui-select-match>
+              <ui-select-match placeholder="Typ auswählen...">{{vm.nap.typ}}</ui-select-match>
               <ui-select-choices repeat="typ in choices track by $index">
                 <span ng-bind="typ"></span>
               </ui-select-choices>
