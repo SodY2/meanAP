@@ -23,7 +23,21 @@ body .btn-primary {
   background-image: none;
 }
 body .btn-primary:hover,
-body .btn-primary:focus {
+body .btn-primary:focus,
+body .btn-primary:active {
+  background-color: #b41336;
+  background-image: linear-gradient(to bottom, #b41336 0%, #b41336 100%);
+  border-color: #b41336;
+}
+body .btn-primary:active:hover,
+body .btn-primary.active:hover,
+body .open > .dropdown-toggle.btn-primary:hover,
+body .btn-primary:active:focus,
+body .btn-primary.active:focus,
+body .open > .dropdown-toggle.btn-primary:focus,
+body .btn-primary:active.focus,
+body .btn-primary.active.focus,
+body .open > .dropdown-toggle.btn-primary.focus {
   background-color: #b41336;
   background-image: linear-gradient(to bottom, #b41336 0%, #b41336 100%);
   border-color: #b41336;
@@ -91,4 +105,16 @@ body .list-preview {
   background-color: white;
   border-radius: 5px;
   padding: 20px;
+}
+body .top-nav a {
+  border: 0px;
+}
+body .top-nav .nav-pills > li.active > a,
+body .top-nav .nav-pills > li.active > a:hover,
+body .top-nav .nav-pills > li.active > a:focus {
+  border: 0;
+}
+body .top-nav .nav > li > a:hover,
+body .top-nav .nav > li > a:focus {
+  border: 0px;
 }

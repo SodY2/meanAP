@@ -32,12 +32,18 @@ body {
       color: @mainColor;
       border-color: @mainColor;
       background-image: none;
-      &:hover, &:focus {
+      &:hover, &:focus, &:active {
         background-color: @mainColor;
         background-image:linear-gradient(to bottom, @mainColor 0%, @mainColor 100%);
         border-color: @mainColor;
       }
     }
+    .btn-primary:active:hover, .btn-primary.active:hover, .open > .dropdown-toggle.btn-primary:hover, .btn-primary:active:focus, .btn-primary.active:focus, .open > .dropdown-toggle.btn-primary:focus, .btn-primary:active.focus, .btn-primary.active.focus, .open > .dropdown-toggle.btn-primary.focus{
+      background-color: @mainColor;
+      background-image:linear-gradient(to bottom, @mainColor 0%, @mainColor 100%);
+      border-color: @mainColor;
+    }
+    
     .page-header{
       padding-bottom: inherit;
       border-bottom: 1px solid @mainColor;
@@ -93,6 +99,18 @@ body {
       background-color: white;
       border-radius: 5px;
       padding: 20px;
+    }
+
+    .top-nav{
+      a{
+        border: 0px;
+      }
+      .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+        border: 0;
+      }
+      .nav > li > a:hover, .nav > li > a:focus {
+        border:0px;
+      }
     }
    }
 //     .row {
