@@ -18,7 +18,8 @@
     "angular-ui-select": "^0.19.4",
     "angular-sanitize": "^1.5.8",
     "textAngular": "^1.5.12",
-    "components-font-awesome": "^4.6.3"
+    "components-font-awesome": "^4.6.3",
+    "angular-linkify": "^1.2.0"
   },
   "resolutions": {
     "angular": "~1.3"

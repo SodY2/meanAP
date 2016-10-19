@@ -7,7 +7,7 @@
     <li class="col-xs-12" ng-repeat="message in shouts">
       <div class="pull-left">
         <strong ng-bind="message.user.displayName"></strong>:
-        <span ng-bind="message.message"></span>
+        <span ng-bind="message.message" linkify></span>
       </div>
     </li>
   </ul>

@@ -27,6 +27,7 @@ module.exports = {
                 'public/lib/textAngular/dist/textAngular-sanitize.min.js',
                 'public/lib/textAngular/dist/textAngularSetup.js',
                 'public/lib/textAngular/dist/textAngular.js',
+                'public/lib/angular-linkify/angular-linkify.js',
             ],
             tests: ['public/lib/angular-mocks/angular-mocks.js']
         },
