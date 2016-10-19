@@ -1,17 +1,18 @@
 <section>
   <div class="page-header">
+    <div class="pull-right"
+         ng-show="vm.canEdit">
+      <a class="btn btn-primary"
+         ui-sref="rules.edit({ ruleId: vm.rule._id })">
+        <i class="glyphicon glyphicon-edit"></i>
+      </a>
+      <a class="btn btn-primary" ng-click="vm.remove()">
+        <i class="glyphicon glyphicon-trash"></i>
+      </a>
+    </div>
     <h1>Regeln bearbeiten</h1>
   </div>
-  <div class="pull-right"
-       ng-show="vm.canEdit">
-    <a class="btn btn-primary"
-       ui-sref="rules.edit({ ruleId: vm.rule._id })">
-      <i class="glyphicon glyphicon-edit"></i>
-    </a>
-    <a class="btn btn-primary" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
-    </a>
-  </div>
+
   <div ta-bind ng-model="vm.rule.rule" class="list-preview"></div>
 
   <small>

@@ -4,7 +4,7 @@ body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   overflow-y: scroll;
   padding-top: 70px;
@@ -105,6 +105,11 @@ body .list-preview {
   background-color: white;
   border-radius: 5px;
   padding: 20px;
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+body .list-preview img {
+  max-height: 300px;
 }
 body .top-nav a {
   border: 0px;

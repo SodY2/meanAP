@@ -102,6 +102,10 @@ var UserSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    vacation_until: {
+        type: Date,
+        default: Date.now
+    },
     /* For reset password */
     resetPasswordToken: {
         type: String
