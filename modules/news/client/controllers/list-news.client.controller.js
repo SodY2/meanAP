@@ -1,15 +1,16 @@
-(function () {
-  'use strict';
+(function() {
+    'use strict';
 
-  angular
-    .module('news')
-    .controller('NewsListController', NewsListController);
+    angular
+        .module('news')
+        .controller('NewsListController', NewsListController);
 
-  NewsListController.$inject = ['NewsService'];
+    NewsListController.$inject = ['NewsService'];
 
-  function NewsListController(NewsService) {
-    var vm = this;
 
-    vm.news = NewsService.query();
-  }
+    function NewsListController(NewsService) {
+        var vm = this;
+        vm.news = NewsService.query();
+    }
+
 }());

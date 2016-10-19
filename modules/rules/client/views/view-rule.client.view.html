@@ -3,7 +3,7 @@
     <h1>Regeln bearbeiten</h1>
   </div>
   <div class="pull-right"
-       ng-show="vm.rule.isCurrentUserOwner">
+       ng-show="vm.canEdit">
     <a class="btn btn-primary"
        ui-sref="rules.edit({ ruleId: vm.rule._id })">
       <i class="glyphicon glyphicon-edit"></i>
