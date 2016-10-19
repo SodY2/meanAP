@@ -1,0 +1,28 @@
+<section>
+  <div class="page-header">
+    <div class="pull-right"
+         ng-show="vm.note.isCurrentUserOwner">
+      <a class="btn btn-primary"
+         ui-sref="notes.edit({ noteId: vm.note._id })">
+        <i class="glyphicon glyphicon-edit"></i>
+      </a>
+      <a class="btn btn-primary" ng-click="vm.remove()">
+        <i class="glyphicon glyphicon-trash"></i>
+      </a>
+    </div>
+    <h1 ng-bind="vm.note.name"></h1>
+  </div>
+
+  <small>
+    <div ta-bind ng-model="vm.note.note" class="list-preview"></div>
+    <em class="text-muted">
+      Erstellt am
+      <span ng-bind="vm.note.created | date:'dd.MM.yyyy'"></span>
+      von
+      <span ng-if="vm.note.user"
+            ng-bind="vm.note.user.displayName"></span>
+      <span ng-if="!vm.note.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.note.content"></p>
+</section>
