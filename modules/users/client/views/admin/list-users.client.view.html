@@ -12,7 +12,7 @@
   <div class="list-group">
     <a ng-repeat="user in pagedItems" ui-sref="admin.user({userId: user._id})" class="list-group-item">
       <h4 class="list-group-item-heading" ng-bind="user.username +' - '+ user.firstName +' ('+ user.clanrang+')'"></h4>
-      <p class="list-group-item-text" ng-bind="user.email"></p>
+      <p class="list-group-item-text">{{user.email}}<span class="vacation" ng-show="isOnVacation(user)"> Abgemeldet bis: {{user.vacation_until | date:'dd.MM.yyyy'}} </span><span class="vacation" ng-show="user.vacation_reason.length > 0 && isOnVacation(user)"> Begründung: {{user.vacation_reason}} </span></p>
     </a>
   </div>
 

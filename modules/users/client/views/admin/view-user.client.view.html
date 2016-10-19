@@ -1,18 +1,14 @@
 <section class="user-detail">
   <div class="page-header">
-    <div class="row">
-      <div class="col-md-6">
+        <div class="pull-right">
+          <a class="btn btn-primary" ui-sref="admin.user-edit({userId: user._id})">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn btn-primary" ng-click="remove();" ng-if="user._id !== authentication.user._id">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </div>
         <h1 ng-bind="user.username"></h1>
-      </div>
-      <div class="col-md-4">
-        <a class="btn btn-primary" ui-sref="admin.user-edit({userId: user._id})">
-          <i class="glyphicon glyphicon-edit"></i>
-        </a>
-        <a class="btn btn-primary" ng-click="remove();" ng-if="user._id !== authentication.user._id">
-          <i class="glyphicon glyphicon-trash"></i>
-        </a>
-      </div>
-    </div>
   </div>
 
   <div class="row">
@@ -55,6 +51,11 @@
       <div class="row">
         <div class="col-md-3"><strong>Clanrang</strong></div>
         <div class="col-md-6" ng-bind="user.clanrang"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Abgemeldet bis</strong></div>
+        <div class="col-md-6">{{ user.vacation_until | date : 'dd.MM.yyyy'}}</div>
       </div>
     </div>
   </div>

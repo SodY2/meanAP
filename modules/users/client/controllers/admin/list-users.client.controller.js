@@ -27,5 +27,11 @@ angular.module('users.admin').controller('UserListController', ['$scope', '$filt
         $scope.pageChanged = function() {
             $scope.figureOutItemsToDisplay();
         };
+
+        $scope.isOnVacation = function(user) {
+            var userDate = new Date(user.vacation_until);
+            var nowDate = new Date();
+            return userDate.getTime() > nowDate.getTime() ? true : false;
+        }
     }
 ]);
