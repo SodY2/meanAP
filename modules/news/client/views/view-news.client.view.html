@@ -1,19 +1,21 @@
 <section>
   <div class="page-header">
+    <div class="pull-right"
+         ng-show="vm.canEdit">
+      <a class="btn btn-primary"
+         ui-sref="news.edit({ newsId: vm.news._id })">
+        <i class="glyphicon glyphicon-edit"></i>
+      </a>
+      <a class="btn btn-primary" ng-click="vm.remove()">
+        <i class="glyphicon glyphicon-trash"></i>
+      </a>
+    </div>
     <h1 ng-bind="vm.news.name"></h1>
+
   </div>
-  {{vm.canEdit}}
-  <div class="pull-right"
-       ng-show="vm.canEdit">
-    <a class="btn btn-primary"
-       ui-sref="news.edit({ newsId: vm.news._id })">
-      <i class="glyphicon glyphicon-edit"></i>
-    </a>
-    <a class="btn btn-primary" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
-    </a>
-  </div>
+
   <small>
+    <div ta-bind ng-model="vm.news.content" class="list-preview"></div>
     <em class="text-muted">
       Erstellt am
       <span ng-bind="vm.news.created | date:'dd.MM.yyyy'"></span>
@@ -23,5 +25,4 @@
       <span ng-if="!vm.news.user">Deleted User</span>
     </em>
   </small>
-  <div ta-bind ng-model="vm.news.content"></div>
 </section>
