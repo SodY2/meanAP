@@ -14,10 +14,7 @@
 
         <div class="form-group" show-errors>
           <label for="vacation_reason">Begründung</label>
-          <input type="text" id="vacation_reason" name="vacation_reason" class="form-control" ng-model="user.vacation_reason" placeholder="Begründung" required>
-          <div ng-messages="userForm.vacation_reason.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Begründung wird benötigt.</p>
-          </div>
+          <input type="text" id="vacation_reason" name="vacation_reason" class="form-control" ng-model="user.vacation_reason" placeholder="Begründung">
         </div>
         <div class="text-center form-group">
           <button type="submit" class="btn btn-primary">Profil speichern</button>
