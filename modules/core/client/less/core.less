@@ -27,7 +27,7 @@ body {
       border: 1px solid transparent;
     }
 
-    .btn-primary{
+    .btn-primary, .btn-primary:disabled{
       background-color: transparent;
       color: @mainColor;
       border-color: @mainColor;
@@ -116,6 +116,19 @@ body {
       .nav > li > a:hover, .nav > li > a:focus {
         border:0px;
       }
+    }
+    .shout-box{
+      ul {
+        height: 100px;
+        background-color: white;
+        overflow-y: scroll;
+        border-radius: 5px;
+        padding-left: 0;
+        li {
+          list-style: none;
+        }
+      }
+      margin-bottom: 80px;
     }
    }
 //     .row {

@@ -1,0 +1,25 @@
+<section class="shout-box">
+  <div class="page-header">
+    <h1>Shoutbox</h1>{{vm.shouts}}
+  </div>
+  <ul>
+    <!-- List all messages -->
+    <li class="col-xs-12" ng-repeat="message in shouts">
+      <div class="pull-left">
+        <strong ng-bind="message.user.displayName"></strong>:
+        <span ng-bind="message.message"></span>
+      </div>
+    </li>
+  </ul>
+  <form class="col-xs-12" name="form.shoutForm" ng-submit="save()">
+    <fieldset class="row">
+      <div class="input-group">
+        <input type="text" id="messageText" name="messageText" class="form-control" ng-model="shout.message" placeholder="Nachricht eingeben ...">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" ng-disabled="!shout.message.length">Absenden</button>
+        </span>
+      </div>
+    </fieldset>
+  </form>
+
+</section>

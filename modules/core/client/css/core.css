@@ -16,15 +16,19 @@ body a {
   color: #b41336;
   border: 1px solid transparent;
 }
-body .btn-primary {
+body .btn-primary,
+body .btn-primary:disabled {
   background-color: transparent;
   color: #b41336;
   border-color: #b41336;
   background-image: none;
 }
 body .btn-primary:hover,
+body .btn-primary:disabled:hover,
 body .btn-primary:focus,
-body .btn-primary:active {
+body .btn-primary:disabled:focus,
+body .btn-primary:active,
+body .btn-primary:disabled:active {
   background-color: #b41336;
   background-image: linear-gradient(to bottom, #b41336 0%, #b41336 100%);
   border-color: #b41336;
@@ -122,4 +126,17 @@ body .top-nav .nav-pills > li.active > a:focus {
 body .top-nav .nav > li > a:hover,
 body .top-nav .nav > li > a:focus {
   border: 0px;
+}
+body .shout-box {
+  margin-bottom: 80px;
+}
+body .shout-box ul {
+  height: 100px;
+  background-color: white;
+  overflow-y: scroll;
+  border-radius: 5px;
+  padding-left: 0;
+}
+body .shout-box ul li {
+  list-style: none;
 }

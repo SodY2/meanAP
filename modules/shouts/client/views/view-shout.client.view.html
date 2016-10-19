@@ -1,0 +1,26 @@
+<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.shout.name"></h1>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.shout.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="shouts.edit({ shoutId: vm.shout._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.shout.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.shout.user"
+            ng-bind="vm.shout.user.displayName"></span>
+      <span ng-if="!vm.shout.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.shout.content"></p>
+</section>
