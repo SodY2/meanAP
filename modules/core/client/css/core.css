@@ -131,7 +131,7 @@ body .shout-box {
   margin-bottom: 80px;
 }
 body .shout-box ul {
-  height: 100px;
+  height: 200px;
   background-color: white;
   overflow-y: scroll;
   border-radius: 5px;
